@@ -1,0 +1,76 @@
+<!-- <div class="row pt-5">
+  <div class="col-md-6 mx-auto">
+    <div class="card rounded-0">
+      <div class="card-header">
+        <h3 class="mb-0">
+          Register
+        </h3>
+      </div>
+      <div class="card">
+        <form  class="form">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control mx-auto " [(ngModel)]="registerUserData.email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control mx-auto" [(ngModel)]="registerUserData.password" name="password" required>
+          </div>
+          <button type="button" class="btn btn-primary float-right" (click)="register()">
+            Register
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="py-5">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+        <div class="alert alert-danger" *ngIf="errormsg">
+            {{errormsg}}
+          </div>
+      <span class="anchor" id="formLogin"></span>
+
+      <!-- form card login -->
+      <div class="card rounded-0">
+        <div class="card-header">
+          <h3 class="mb-0">Register</h3>
+        </div>
+        <div class="card-body">
+          <form class="form" #regform="ngForm" *ngIf ="!submitted" (ngSubmit)="register()" novalidate>
+              <div class="form-group">
+                  <label>Name</label>
+                  <input type="text" #userName="ngModel" [class.is-invalid]="userName.invalid && userName.touched " ngModel  autocomplete="off" [(ngModel)]="registerUserData.userName" name="userName" class="form-control rounded-0" required>
+                  <span class="text-danger" [class.d-none]="userName.valid || userName.untouched">Enter your name </span>
+                </div>
+               
+              <div class="form-group">
+                  <label>Phone Number</label>
+                  <input type="text" #phoneNumber="ngModel" pattern="^\d{10}$" [class.is-invalid]="phoneNumber.invalid && phoneNumber.touched " ngModel  autocomplete="off" [(ngModel)]="registerUserData.phoneNumber" name="phoneNumber" class="form-control rounded-0" required>
+                  <span class="text-danger" [class.d-none]="phoneNumber.valid || phoneNumber.untouched">Enter your phone number </span>
+                </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="text" #email="ngModel" [class.is-invalid]="email.invalid && email.touched " ngModel  autocomplete="off" [(ngModel)]="registerUserData.email" name="email" class="form-control rounded-0" required>
+              <span class="text-danger" [class.d-none]="email.valid || email.untouched">Enter your email </span>
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" #password="ngModel" [class.is-invalid]="password.invalid && password.touched " ngModel  autocomplete="off" [(ngModel)]="registerUserData.password" name="password" class="form-control rounded-0"  required>
+              <span class="text-danger" [class.d-none]="password.valid || password.untouched">Enter your password</span>
+            </div>
+            <button type="button" [disabled]="regform.form.invalid "  type="submit" class="btn btn-primary float-right">Register</button>
+          </form>
+        </div>
+        <!--/card-block-->
+      </div>
+      <!-- /form card login -->
+
+    </div>
+
+
+  </div>
+</div>

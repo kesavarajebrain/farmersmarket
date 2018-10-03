@@ -1,0 +1,13 @@
+<div class="row mt-5">
+  <div class="col-md-4 mb-3" *ngFor="let member of memberslist">
+    <div class="card text-center">
+      <div class="card-body">
+     <h6>Name:&nbsp;<span>{{member.userName}}</span></h6>
+     <p>Phone:&nbsp;<span>{{member.phoneNumber}}</span></p>
+     <p>Email:&nbsp;<span>{{member.email}}</span></p>
+     <button type="button" (click)="onSelect(member)" type="submit" class="btn btn-default float-right">View More</button>
+     <!-- <span class="badge">{{member._id}}</span> -->
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+create a new project "ng new appName". with authentication based 
+create express SERVER in a new folder 
+then open terminal from tne folder then " Npm init --yes" for package.json file creation.
+then install middleware "npm install express body-parser --save"
+then create a new file called "server .js " for declare server credentials.
+then create another one folder for various routes on server named as "routes"
+then make a new file called "api.js" in the routes folder.
+then check it get request from api.js file 
+then create database in mlab.com 
+then install mangoose for database interaction.
+then install "npm install --save mangoose"
+then add functions for get and post requests
+then move to UI designs in angular app 
+then add routing module for making routing concepts by add command "ng generate module app-routing --flat --module=app" 
+then add components of the application
+then add routing particulars in "app.routing.module.ts"
+
+now one probelm occurs "<router-outlet></router-outlet>" is non known element.
+so we import "import {RouterModule} from '@angular/router';" in "App.module.ts"
+then make UI for components.
+then add "import { FormsModule} from '@angular/forms'" in "app.module.ts"
+then get console log the form values from HTML
+once console log success, go to create a service for send data in to  backend 
+then create service "ng g s servicename"
+then normal and get post methods 
+then add authentication by "JSON"  web tokens by cmd "npm install jsonwebtoken --save"
+then you see token in console
+now we store a token in browser by localstorage
+now generate guard by cmd "ng g guard guardname"
+then add interceptor service for check the valid token with backend 
+now create a service 
+add functions 
+now check it hard coded token value like " Authorization: 'Bearer xx.yy.zz'"
+if check this working or not restart the server then open network in console now click any page click page 
+now add in auth.service.ts "get token from interceptor"
+then import auth.service in token interceptor service. little bit different inject
+then add dynamic auth "  Authorization:`Bearer ${authService.getToken()}`" in token.interceptor service
+now check it in application tab on console
