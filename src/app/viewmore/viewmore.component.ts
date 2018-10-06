@@ -13,8 +13,8 @@ export class ViewmoreComponent implements OnInit {
   memberlist=[]
   id:any;
   member={
-name:'',
-phone:''
+ name:'',
+ phone:''
   }
 
   // public member_id;
