@@ -15,11 +15,11 @@ const api = require('../Express-Server/routes/api')
 const app = express()
 
 //CORS by kirupa 
-// app.use(function(req, res, next) {
-//     res.header('Access-Control-Allow-Origin', req.headers.origin);
-//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type,application/json, Accept,x-access-token");
-//     next();
-//     });
+app.use(function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', req.headers.origin);
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type,application/json, Accept,x-access-token");
+    next();
+    });
 
 //use cors
  app.use(cors())

@@ -52,11 +52,11 @@
                   <input type="text" #phoneNumber="ngModel" pattern="^\d{10}$" [class.is-invalid]="phoneNumber.invalid && phoneNumber.touched " ngModel  autocomplete="off" [(ngModel)]="registerUserData.phoneNumber" name="phoneNumber" class="form-control rounded-0" required>
                   <span class="text-danger" [class.d-none]="phoneNumber.valid || phoneNumber.untouched">Enter your phone number </span>
                 </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label>Email</label>
               <input type="text" #email="ngModel" [class.is-invalid]="email.invalid && email.touched " ngModel  autocomplete="off" [(ngModel)]="registerUserData.email" name="email" class="form-control rounded-0" required>
               <span class="text-danger" [class.d-none]="email.valid || email.untouched">Enter your email </span>
-            </div>
+            </div> -->
             <div class="form-group">
               <label>Password</label>
               <input type="password" #password="ngModel" [class.is-invalid]="password.invalid && password.touched " ngModel  autocomplete="off" [(ngModel)]="registerUserData.password" name="password" class="form-control rounded-0"  required>

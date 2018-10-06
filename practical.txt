@@ -36,3 +36,30 @@ now add in auth.service.ts "get token from interceptor"
 then import auth.service in token interceptor service. little bit different inject
 then add dynamic auth "  Authorization:`Bearer ${authService.getToken()}`" in token.interceptor service
 now check it in application tab on console
+
+
+// ngOnInit() {
+ 
+//   this.id = this.route.snapshot.params['id']
+//  this.auth.getUser()
+
+//  .subscribe(
+//     res=>{
+//       this.memberlist = res
+//       console.log(this.id)
+    
+//       for(let i=0; i < this.memberlist.length; i++){
+//         console.log( this.memberlist)
+//         if(this.id = this.memberlist[0]._id){
+//  this.member.name = this.memberlist[0].userName
+//  this.member.phone = this.memberlist[1].phoneNumber
+
+//         }
+//       }
+
+//     },
+//     err=> console.log(err)
+   
+//  )
+
+// }

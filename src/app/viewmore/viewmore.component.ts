@@ -1,28 +1,98 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../auth.service';
-import {ActivatedRoute} from '@angular/router'
+import {ActivatedRoute, Params} from '@angular/router'
+import {RouterModule} from '@angular/router';
+
 @Component({
   selector: 'app-viewmore',
   templateUrl: './viewmore.component.html',
   styleUrls: ['./viewmore.component.css']
 })
 export class ViewmoreComponent implements OnInit {
-  member=[]
+ 
+  memberlist=[]
+  id:any;
+  member={
+name:'',
+phone:''
+  }
+
   // public member_id;
-  constructor(private auth:AuthService,private route:ActivatedRoute) { }
+  constructor(private auth:AuthService,private route:ActivatedRoute,private router:RouterModule) { }
 
 ngOnInit() {
-  this.auth.getspecificuser()
-  .subscribe(
-     res=>{
-      this.member = res,
-      console.log(this.member)
-     },
-     err=> console.log(err)
-     //{
-    //   console.log(res)
-    // }
-  )
-  
+ 
+  this.id = this.route.snapshot.params['id']
+ this.auth.getUser()
 
-}}
+ .subscribe(
+    res=>{
+      this.memberlist = res
+      console.log(this.id)
+    
+      for(let i=0; i < this.memberlist.length; i++){
+        console.log( this.memberlist)
+        if(this.id = this.memberlist[0]._id){
+ this.member.name = this.memberlist[0].userName
+ this.member.phone = this.memberlist[0].phoneNumber
+
+        }
+      }
+
+    },
+    err=> console.log(err)
+   
+ )
+
+}
+
+
+// ngOnInit() {
+ 
+//   this.id = this.route.snapshot.params['id']
+// this.auth.getUser()
+// .subscribe(
+//   res=>{
+//     this.memberlist = res
+//     console.log(this.memberlist)
+//     for(let i=0; i < this.memberlist.length; i++){
+//       console.log(this.memberlist.length)
+//       this.member.name = this.memberlist[0].userName
+//     }
+//   },
+//   err=>{
+//     console.log(err)
+//   }
+// )
+
+// }
+
+}
+
+// ngOnInit() {
+ 
+//   this.id = this.route.snapshot.params['id']
+//  this.auth.getUser()
+
+//  .subscribe(
+//     res=>{
+//       this.memberlist = res
+//       console.log(this.id)
+    
+//       for(let i=0; i < this.memberlist.length; i++){
+//         console.log( this.memberlist)
+//         if(this.id = this.memberlist[0]._id){
+//  this.member.name = this.memberlist[0].userName
+//  this.member.phone = this.memberlist[1].phoneNumber
+
+//         }
+//       }
+
+//     },
+//     err=> console.log(err)
+   
+//  )
+
+// }
+
+

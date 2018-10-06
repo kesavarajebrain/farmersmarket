@@ -74,42 +74,85 @@ router.get('/users',(req,res)=>{
 })
 
 //get a user
-router.get('/users/:id',function(req,res){
-  console.log('api works');
-        User.findById(req.params.id)
-        .exec(function(err,getuser){
-        if(err){
-            console.log("Error in get data ");
-        }else{
-            res.send(getuser)
+// router.get('/users/:id',function(req,res){
+//   console.log('api works');
+//   User.findById(req.params.id,function(err,getsinuser){
+//     if(err){
+//         console.log('error get' + err)
+
+//     }
+//     else{
+//      res.send(getsinuser)
+       
+//     }
+// })      
+//  });
+
+//get a user
+ router.get('/users/:id', function(req, res){
+    console.log('Get request for a single user');
+    User.findById(req.params.id)
+    .exec(function(err, getsingleuser){
+        if (err){
+            console.log("Error retrieving user" + err);
+        }else {
+            res.send(getsingleuser);
+            console.log(getsingleuser)
         }
- 
     });
- });
+});
 
  //delete user
- router.delete('users/:id',function(req,res){
+ router.delete('/users/:id',function(req,res){
      console.log('delete user');
      User.findByIdAndRemove(req.params.id,function(errors,deleteuser){
-         if(errors){
-             res.send("Error deleting");
-
-         }else{
-             res.json(deleteuser)
-         }
+      
+            if(errors){
+                console.log("Error deleting" + errors);
+   
+            }else{
+                res.json(deleteuser)
+            }
+       
+        
      })
  })
+
+ //update user
+ router.put('/users/:id', function(req, res){
+    console.log('Update a user');
+    // let userData = req.body
+    // let User = new User(userData)
+    User.findByIdAndUpdate(req.params.id,
+    {
+        $set: {userName: req.body.userName, phoneNumber: req.body.phoneNumber, password: req.body.password}
+    },
+    {
+        new: true
+    },
+    function(err, updatedUser){
+        if(err){
+            res.send("Error updating user");
+        }else{
+            res.json(updatedUser);
+        }
+    }
+
+    );
+});
+
+
 
 router.post('/login',(req,res)=>{
     let userData = req.body
 
-    User.findOne({email: userData.email},(error,user)=>{
+    User.findOne({phoneNumber: userData.phoneNumber},(error,user)=>{
         if(error){
             console.log(error)
 
         }else{
             if(!user){
-                res.status(401).send('Invalid email')
+                res.status(401).send('Invalid Phone Number')
                
             }else{
                 if(user.password !== userData.password){

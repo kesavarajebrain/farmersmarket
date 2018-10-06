@@ -18,6 +18,7 @@ const routes:Routes =[
     path:'events',
     component:EventsComponent
   },
+  {path:'events/:id',component:EventsComponent },
   {
     path:'special',
     component:SpecialComponent,
@@ -38,6 +39,8 @@ const routes:Routes =[
   },
   {path:'viewmore/:id',
   component:ViewmoreComponent},
+ 
+
   
 
 ]
