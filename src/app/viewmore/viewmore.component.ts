@@ -38,7 +38,6 @@ ngOnInit() {
 
         }
       }
-
     },
     err=> console.log(err)
    
