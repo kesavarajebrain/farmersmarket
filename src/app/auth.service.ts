@@ -11,7 +11,7 @@ export class AuthService {
   private _registerUrl = "http://localhost:3200/api/register"
   private _usersUrl = "http://localhost:3200/api/users"
   private _loginUrl ="http://localhost:3200/api/login"
-  private _getspecificuserUrl ="http://localhost:3200/api/users/:id"
+  private _getspecificuserUrl ="http://localhost:3200/api/users"
  // private _deletespecificuserUrl ="http://localhost:3200/api/users/:id"
   constructor(private http:HttpClient, private route:Router) { }
 
@@ -27,12 +27,12 @@ export class AuthService {
     return this.http.post<any>(this._loginUrl,data1)
   }
 
-  getspecificuser(){
-    return this.http.get<any>(this._getspecificuserUrl)
+  getspecificuser(data,id){
+    return this.http.put<any>(this._getspecificuserUrl + "/" + id ,data)
   }
 
-  deleteuser(){
-    return this.http.delete<any>(this._getspecificuserUrl)
+  deleteuser(id){
+    return this.http.delete<any>(this._getspecificuserUrl + "/" + id )
   }
 
   //auth guard

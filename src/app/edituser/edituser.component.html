@@ -1,0 +1,14 @@
+<div class="row mt-5">
+  <div class="col-md-4 mb-3">
+    <div class="card text-center">
+      <div class="card-body">
+        <input type="text" #userName="ngModel" [(ngModel)]="registerUserData.userName" name="userName" 
+         value="{{member.userName}}">
+        <input type="text" #phoneNumber="ngModel" [(ngModel)]="registerUserData.phoneNumber" name="phoneNumber" value="{{member.phoneNumber}}">
+        <input type="text" #password="ngModel" [(ngModel)]="registerUserData.password" name="password" value="{{member.password}}">
+      </div>
+      <button type="button" (click)="update()">Update</button>
+    </div>
+  </div>
+</div>
+

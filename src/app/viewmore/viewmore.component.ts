@@ -32,9 +32,9 @@ ngOnInit() {
     
       for(let i=0; i < this.memberlist.length; i++){
         console.log( this.memberlist)
-        if(this.id = this.memberlist[0]._id){
- this.member.name = this.memberlist[0].userName
- this.member.phone = this.memberlist[0].phoneNumber
+        if(this.id == this.memberlist[i]._id){
+ this.member.name = this.memberlist[i].userName
+ this.member.phone = this.memberlist[i].phoneNumber
 
         }
       }

@@ -4,10 +4,11 @@
       <div class="card-body">
      <h6>Name:&nbsp;<span>{{member.userName}}</span></h6>
      <p>Phone:&nbsp;<span>{{member.phoneNumber}}</span></p>{{member._id}}
-     <a routerLink="/viewmore/{{member._id}}" >View More</a>
+     <button type="button" routerLink="/viewmore/{{member._id}}" class="btn btn-primary" >View More</button>
 
     <!-- delete user -->
-     <button type="button" (click)="deleteuser(member)" type="submit" class="btn btn-danger float-left">Delete user</button>
+     <button type="button" routerLink="/viewmore/{{member._id}}" (click)="deleteuser()" type="submit" class="btn btn-danger float-left">Delete user</button><br>
+     <button type="button" routerLink="/edituser/{{member._id}}" type="submit" class="btn btn-default float-left">Edit</button>
      <!-- <span class="badge">{{member._id}}</span> -->
     
       </div>

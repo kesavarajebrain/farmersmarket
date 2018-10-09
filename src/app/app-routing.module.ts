@@ -6,7 +6,8 @@ import { SpecialComponent } from './special/special.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import {ViewmembersComponent} from '../app/viewmembers/viewmembers.component';
-import {ViewmoreComponent} from '../app/viewmore/viewmore.component'
+import {ViewmoreComponent} from '../app/viewmore/viewmore.component';
+import {EdituserComponent} from '../app/edituser/edituser.component'
 import {AuthGuard} from '../app/auth.guard'
 const routes:Routes =[
   {
@@ -39,6 +40,15 @@ const routes:Routes =[
   },
   {path:'viewmore/:id',
   component:ViewmoreComponent},
+
+  {path:'edituser/:id',
+  component:EdituserComponent},
+
+  {path:'register/:id',
+  component:RegisterComponent},
+
+  {path:'viewmembers/:id',
+  component:ViewmembersComponent},
  
 
   

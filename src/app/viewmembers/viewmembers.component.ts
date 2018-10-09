@@ -11,7 +11,7 @@ import {ActivatedRoute} from '@angular/router'
 export class ViewmembersComponent implements OnInit {
   public memberid;
   memberslist=[]
-
+  id:any;
   constructor(private auth:AuthService,private router:Router,private route:ActivatedRoute) { }
 
   ngOnInit() {
@@ -35,14 +35,15 @@ export class ViewmembersComponent implements OnInit {
      //this.router.navigate([''],{relativeTo: this.route});
   }
 
- deleteuser(member){
-  this.router.navigate(['/viewmembers',member._id]);
-  let id = parseInt(this.route.snapshot.paramMap.get('id'));
-  this.memberid = id;
-  this.auth.deleteuser()
+ deleteuser(){
+   alert("hghf");
+  this.id = this.route.snapshot.params['id']
+  this.auth.deleteuser(this.id)
   .subscribe(
-     res=> console.log(res),
-     err=> console.log(err)
+     res=>{ console.log(res);
+      alert(this.id)},
+     err=>{ console.log(err);
+      alert(this.id)},
   
   )
  }

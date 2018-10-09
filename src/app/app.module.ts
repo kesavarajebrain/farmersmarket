@@ -15,7 +15,8 @@ import {AuthGuard} from '../app/auth.guard'
 
 import {TokenInterceptorService } from '../app/token-interceptor.service';
 import { ViewmembersComponent } from './viewmembers/viewmembers.component';
-import { ViewmoreComponent } from './viewmore/viewmore.component'
+import { ViewmoreComponent } from './viewmore/viewmore.component';
+import { EdituserComponent } from './edituser/edituser.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,7 @@ import { ViewmoreComponent } from './viewmore/viewmore.component'
     SpecialComponent,
     ViewmembersComponent,
     ViewmoreComponent,
+    EdituserComponent,
    
   ],
   imports: [
